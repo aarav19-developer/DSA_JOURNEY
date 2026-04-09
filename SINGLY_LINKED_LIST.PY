@@ -22,4 +22,6 @@ class Node:
 # 3.) Is_empty
 # 4.) traverse
 
+# PAUSE...
+
 
