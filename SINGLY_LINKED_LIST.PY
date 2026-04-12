@@ -5,10 +5,10 @@
 # NODE:
       #  - A node is a container that holds data and one or more links/pointers to other nodes.
 
-# class Node:
-#     def __init__(self,item = None,next = None):
-#         self.item = item
-#         self.next = next
+class Node:
+    def __init__(self,item = None,next = None):
+        self.item = item
+        self.next = next
 
 # SINGLY LINKED LIST:
               #   Singly linkd list is a linear data structure.
@@ -156,7 +156,8 @@ for x in myList:
 print()
 
 
-# pause....
+# LIMITATION OF SINGLY LINKED LIST:
+# You can not go instantly to the previous node. You have to start from the beginning to go to the particular node.
 
 
     
