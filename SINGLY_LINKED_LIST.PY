@@ -157,7 +157,9 @@ print()
 
 
 # LIMITATION OF SINGLY LINKED LIST:
+
 # You can not go instantly to the previous node. You have to start from the beginning to go to the particular node.
+# There is a need of traversing if we have to add a node at the last.
 
 
     
