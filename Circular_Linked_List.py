@@ -89,5 +89,71 @@ class CLL:
                 temp = self.last.next
                 while temp.next != self.last:
                     temp = temp.next
+                temp.next = self.last.next
+                self.last = temp
+
+    def delete_item(self,data):
+        if not self.is_empty():
+            if self.last.next == self.last:
+                if self.last.item == data:
+                    self.last = None
+            else:
+                if self.last.next.item ==  data:
+                    self.delete_first()
+                else:
+                    temp = self.last.next
+
+                    while temp != self.last:
+                        if temp.next == self.last:
+                            if self.last.item == data:
+                                self.delete_last()
+                                break
+                        if temp.next.item == data:
+                            temp.next = temp.next.next
+                            break
+                        temp = temp.next
+
+# In class CLL, implement iterator for CLL to access all the elements of the list in a sequence.
+
+    def __iter__(self):
+        if self.last == None:
+            return CLLIterator(None)
+        else:
+            return CLLIterator(self.last.next)
+         
+class CLLIterator:
+    def __init__(self,start):
+        self.current = start
+        self.start = start
+        self.count = 0
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.current == None:
+            raise StopIteration
+        if self.current == self.start and self.count == 1:
+            raise StopIteration
+        else:
+            self.count=1
+        data = self.current.item
+        self.current = self.current.next
+        
+        return data
+
+cll = CLL()
+cll.insert_at_start(10)
+cll.insert_at_start(20)
+cll.insert_at_last(0)
+cll.insert_at_last(100)
+cll.insert_after(cll.search(10),13)
+for x in cll:
+    print(x,end=" ")
+print()
+                                
+
+
+
+
+
 
                
