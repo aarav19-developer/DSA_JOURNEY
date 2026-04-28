@@ -149,6 +149,8 @@ cll.insert_after(cll.search(10),13)
 for x in cll:
     print(x,end=" ")
 print()
+
+# pause....
                                 
 
 
